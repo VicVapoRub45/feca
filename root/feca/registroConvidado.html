@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Convidado </title>
+</head>
+<body>
+    <form action="php/registroConv.php" name="bandaForm" method="POST" onsubmit="return checkCampos()"> 
+        Nome: <input type="text" name="nomeConvidado" required> <br> 
+        Documento: <input type=""
+        <div id="extraRG" style="display: none;">
+            RG <input type="text" name="RGCovidado">
+        </div> 
+        <div id="extraCPF" style="display: none;">
+            CPF <input type="text" name="CPFConvidado">
+        </div>
+        Numero de telefone: <input type="tel" name="telBanda" title="Insira um número de telefone valido" placeholder="(00) 00000-0000" oninput="formatarTelefone(this)"> <br> 
+        E-mail: <input type="email" name="emailBanda"> <br> 
+        Pertence a alguma escola? <input type="checkbox" id="btnEscolaConvidado" onclick="addEscola()"> <br> 
+        <div id="extra" style="display:none;">
+            Escola: <input type="text" name="escolaConvidado">
+        </div>
+        <input type="submit" value="submit">
+    </form> 
+    <a href="index.html"> VOLTAR A PAGINA INICIAL </a>
+    <script type="text/javascript" src="js/regBanda.js"></script>
+</body>
+</html>
