@@ -2,40 +2,91 @@
 <html lang="pt-br">
 
 <head>
-    <title> Registro da banda </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Registro de Banda</title>
+    <link rel="stylesheet" href="style/geral.css">
 </head>
 
 <body>
-    <h1> ALTO MEMES 2 </h1>
-    <form action="php/registroBanda.php" name="bandaForm" method="POST" onsubmit="return checkCampos()">
-        Nome da banda: <input type="text" name="nomeBanda" required> <br> Numero de integrantes: <input type="number" name="numInteg" required> <br> Numero de telefone: <input type="tel" name="telBanda" title="Insira um número de telefone válido" placeholder="(00) 00000-0000"
-            oninput="formatarTelefone(this)"> <br> E-mail: <input type="email" name="emailBanda"> <br>
+    <div class="header">
+        <ul class="menuPrincipal">
+            <li>
+                <a href="index.html"> <img src="source/logoTemp.png"> </a>
+            </li>
+            <li>
+                <a href="registroBanda.html">REGISTRE SUA BANDA</a>
+            </li>
+            <li>
+                <a href="registroConvidado.html"> INSCREVA-SE GRATUITAMENTE </a>
+            </li>
+            <li>
+                <a href="votacao.html"> VOTE NA SUA BANDA FAVORITA DO DIA </a>
+            </li>
+        </ul>
+    </div>
+    <div class="mobileNav">
+        <a href="index.html"><img src="source/logoTemp.png"></a>
+        <div class="indexIcon" onclick="mobileMenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
 
-        <!-- Input para a cidade -->
-        Cidade:
-        <select name="cidade" id="cidadeSelect" required>
-            <option value="Americana">Americana</option>
-            <option value="SBO">Santa Barbara do Oeste</option>
-            <option value="Novaa Odessa"> Nova Odessa </option>
-        </select><br> Escola:
-        <select name="escola" id="escolaSelect" action="php/getEscolas.php" required>
+            <ul class="menuMobile">
+                <li>
+                    <a href="index.html"> HOME </a>
+                </li>
+                <li>
+                    <a href="registroBanda.html">REGISTRE SUA BANDA</a>
+                </li>
+                <li>
+                    <a href="registroConvidado.html"> INSCREVA-SE GRATUITAMENTE </a>
+                </li>
+                <li>
+                    <a href="votacao.html"> VOTE NA SUA BANDA FAVORITA DO DIA </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div></div>
+    <br> <br><br> <br>
+    <form action="php/registroBanda.php" name="bandaForm" method="POST" onsubmit="return checkCampos()">
+
+
+        <h1> Registro de Banda </h1>
+        <div class="secao"><b> Informações Gerais </b></div>
+        <br>Nome da banda:* <input type="text" name="nomeBanda" required> <br> Número de integrantes:* <input type="number" name="numInteg" required> <br>
+        <div class="secao"> <b>  Informações de Contato* </b> </div> <br>Número de telefone: <input type="tel" name="telBanda" title="Insira um número de telefone válido" placeholder="(00) 00000-0000" oninput="formatarTelefone(this)" id="telefone"> <br> E-mail:
+        <input type="email" name="emailBanda"> <br>
+        <div class="secao"><b> Escola</b> </div>
+        </select>
+        <select name="cidadeBanda" id="escolaBanda">
+            <option value="">Escolha a escola</option>
+            <optgroup label="Americana">
+                <option value="Escola Profª Risoleta Lopes Aranha">Escola Profª Risoleta Lopes Aranha</option>
+                <option value="Escola Prof° Ary Menegatto">Escola Prof° Ary Menegatto</option>
+                <option value="Fatec Americana">Fatec Americana</option>
+                <option value="Escola Dr. Heitor Penteado">Escola Dr. Heitor Penteado</option>
+                <option value="Escola Magi Monsenhor">Escola Magi Monsenhor</option>
+                <option value="Escola Profª Clarice Costa Conti">Escola Profª Clarice Costa Conti</option>
+                <option value="Antonieta Ghizini Lenhare Profª">Antonieta Ghizini Lenhare Profª</option>
+                <option value="Escola Germano Benencase Maestro">Escola Germano Benencase Maestro</option>
+                <option value="EMEF Professor Jonas Correa de Arruda Filho">EMEF Professor Jonas Correa de Arruda Filho</option>
+            </optgroup>
+            <optgroup label="SBO">
+                <option value="Alcheste de Godoy Andia Profª">Alcheste de Godoy Andia Profª</option>
+            </optgroup>
+            <optgroup label="Nova Odessa">
+                <option value="Escola Geraldo de Oliveira">Escola Geraldo de Oliveira</option>
+            </optgroup>
         </select>
 
 
-        <!-- Input para autocompletar escola 
-        Escola: <input type="text" name="escolaBanda" id="escolaInput" onkeyup="fetchEscolas(this.value)" autocomplete="off">
-        <div id="sugestoesEscolas"></div>
-        
-        Não aparece
-        Resolver add-->
-
-        <input type="submit" value="submit">
+        <input type="submit" value="Enviar ">
+        <a href="index.html">VOLTAR À PÁGINA INICIAL</a>
     </form>
 
-    <a href="index.html">VOLTAR À PÁGINA INICIAL</a>
+    <script type="text/javascript " src="js/function.js "></script>
 </body>
 
 </html>
